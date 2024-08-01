@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.0.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListadoReservas" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="975f81d5-f92b-4895-91c4-bbdcc75b43e0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="desde" class="java.lang.String"/>
+	<parameter name="hasta" class="java.lang.String"/>
+	<parameter name="funcionario" class="java.lang.String"/>
+	<parameter name="cliente" class="java.lang.String"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="fecha_ingreso" class="java.util.Date"/>
+	<field name="cliente.nombre" class="java.lang.String"/>
+	<field name="funcionario.nombre" class="java.lang.String"/>
+	<field name="costo_total" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="50" y="7" width="400" height="40" uuid="83d4ecee-47eb-4c22-b34d-65fcffec767b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Algerian" size="25"/>
+				</textElement>
+				<text><![CDATA[Informe de Reservas Simples]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="f9cb3dd3-5e91-47a4-ad45-1f1c9c3c4dbd"/>
+				<textFieldExpression><![CDATA["Fecha: "+$P{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="79" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="d6365314-067f-4fd0-ba6e-ab5db0259357"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Desde:"+$P{desde}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="220" y="0" width="100" height="30" uuid="5daf2f39-7e47-4abb-85e2-f6acb3b2e506"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Hasta: "+$P{hasta}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="34" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="30" width="557" height="1" uuid="f046ca0f-fe8b-4ace-9767-3520636e428e"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="0" width="30" height="30" uuid="865af17d-1ef7-4a60-b2a3-43a53ab182a2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e52bf43a-cda5-4374-ab40-735518ec5c5a"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="0" width="178" height="30" uuid="968db047-74f9-424b-8523-2234dfe37d37">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="95ef262d-992a-448d-845d-a4f4366caa53"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="0" width="160" height="30" uuid="a211a0a9-ada5-42de-8cfd-b79e3cb19e7e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b17a4cb0-5fbb-4267-925d-60f6bf43e4ed"/>
+				</reportElement>
+				<textElement verticalAlignment="Bottom"/>
+				<text><![CDATA[Funcionario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="0" width="92" height="30" uuid="9f3ee1d8-8017-4704-ba0d-1d4fbbb3e316">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bc0252e1-52ac-4890-9db9-16c63177e29a"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Bottom"/>
+				<text><![CDATA[Costo Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="30" height="20" uuid="6c87e9ba-edaf-4391-8643-df584de49a6d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e52bf43a-cda5-4374-ab40-735518ec5c5a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="0" width="178" height="20" uuid="56b6f806-f1b7-4b22-87ed-919d9e5de6b7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="95ef262d-992a-448d-845d-a4f4366caa53"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cliente.nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="0" width="160" height="20" uuid="6ed5c783-7af5-453f-bd4b-7b047f145cd5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b17a4cb0-5fbb-4267-925d-60f6bf43e4ed"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{funcionario.nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="0" width="92" height="20" uuid="c7df3e2f-7265-44b3-8f32-eadfa8f4feef">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bc0252e1-52ac-4890-9db9-16c63177e29a"/>
+				</reportElement>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{costo_total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="380" y="20" width="172" height="30" uuid="83b56f8a-3cb9-4022-9737-29fda37b5ee4"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pág. "+$V{PAGE_NUMBER}+" de "+$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
